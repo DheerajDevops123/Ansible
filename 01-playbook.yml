@@ -4,6 +4,7 @@
   tasks:
     - name: printing hello world
       debug:
-        msg: Hello Worldc
-
+        msg: Hello World
+ roles:
+    - sample
 
