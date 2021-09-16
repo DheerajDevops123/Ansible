@@ -2,7 +2,7 @@
   hosts:
     - all
   vars:
-    URL1: playgoogle.com
+    URL1: play.google.com
   vars_files:
   - vars.yml
   tasks:
@@ -12,3 +12,7 @@
   - name: Print Variable from File
     debug:
      msg: URL = {{URL2}}
+  - name: Print Variable from Task Level
+    URL: task.google.com
+    debug:
+     msg: URL = {{URL3}}     
