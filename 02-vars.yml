@@ -5,5 +5,5 @@
     URL= google.com
   tasks:
   - name: Print Url
-     debug:
+    debug:
       msg: = {{URL}}
