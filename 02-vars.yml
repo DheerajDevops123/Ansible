@@ -38,4 +38,10 @@
   - name: Print uptime output
     debug:
      msg: "{{out.stdout}}"
+  - name: Declare a fact
+    set_fact:
+     output: "{{out.stdout}}"
+    debug:
+     msg: "{{output}}"
+     
      
