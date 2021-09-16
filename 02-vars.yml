@@ -13,6 +13,7 @@
     debug:
      msg: URL = {{URL2}}
   - name: Print Variable from Task Level
-    URL: task.google.com
+    vars:
+     URL: task.google.com
     debug:
      msg: URL = {{URL3}}     
