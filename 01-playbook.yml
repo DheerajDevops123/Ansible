@@ -3,6 +3,6 @@
     - all
   tasks:
     - debug:
-        msg: Helo World
+        msg: Hello World
 
 
