@@ -2,8 +2,8 @@
   hosts: 
     - all
   tasks:
-  - name: printing hello world
-    - debug:
+    - name: printing hello world
+      debug:
         msg: Hello World
 
 
