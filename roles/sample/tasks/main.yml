@@ -1,3 +1,8 @@
 - name: Helloo world from role
   debug:
     msg: Hello World
+    
+- name:
+  debug:
+   msg: URL = {{URL}}
+    
