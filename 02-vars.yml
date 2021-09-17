@@ -45,4 +45,9 @@
     debug:
      msg: "{{output}}"
      
+  roles:
+   - sample
+  
+     
+     
      
