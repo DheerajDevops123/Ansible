@@ -41,7 +41,7 @@
   - name: Declare a fact
     set_fact:
      output: "{{out.stdout}}"
-  - name: Print a fact Vraible
+  - name: Print a fact Variable
     debug:
      msg: "{{output}}"
      
