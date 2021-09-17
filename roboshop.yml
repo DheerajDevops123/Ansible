@@ -67,7 +67,7 @@
   tags:
    - rabbitmq
  become: yes
-  roles:
+ roles:
    - rabbitmq
  
 - name: RoboShop Setup Payment
