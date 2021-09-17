@@ -64,9 +64,10 @@
   
 - name: RoboShop Setup RabbitMQ
   hosts: RABBITMQ
-  tags: rabbitmq
- become: yes
- roles:
+  tags: 
+   - rabbitmq
+  become: yes
+  roles:
    - rabbitmq
  
 - name: RoboShop Setup Payment
