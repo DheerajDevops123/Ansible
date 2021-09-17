@@ -1,3 +1,6 @@
+- name: Roboshop playbook
+  hosts: all
+  tasks:
 - name: RoboShop Setup Frontend
   hosts: FRONTEND
   roles:
