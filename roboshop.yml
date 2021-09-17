@@ -48,7 +48,7 @@
   
 - name: RoboShop Setup Mysql
   hosts: MYSQL
-   tags:
+  tags:
    - mysql
   become: yes
   roles:
