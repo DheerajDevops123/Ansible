@@ -2,6 +2,7 @@
   hosts: FRONTEND
   tags:
    - frontend
+  become: yes
   roles:
    - frontend
   
@@ -9,6 +10,7 @@
   hosts: MONGODB
   tags:
    - mongodb
+  become: yes
   roles:
    - mongodb
   
@@ -16,6 +18,7 @@
   hosts: CATALOGUE
   tags:
    - catalogue
+  become: yes
   roles:
    - catalogue
   
@@ -23,6 +26,7 @@
   hosts: REDIS
   tags:
    - redis
+  become: yes
   roles:
    - redis
   
@@ -30,6 +34,7 @@
   hosts: USER
   tags:
    - user
+  become: yes
   roles:
    - user
   
@@ -37,6 +42,7 @@
   hosts: CART
   tags:
    - cart
+  become: yes
   roles:
    - cart
   
@@ -44,6 +50,7 @@
   hosts: MYSQL
    tags:
    - mysql
+  become: yes
   roles:
    - mysql
  
@@ -51,13 +58,15 @@
   hosts: SHIPPING
   tags:
    - shipping
+  become: yes
   roles:
    - shipping
   
 - name: RoboShop Setup RabbitMQ
   hosts: RABBITMQ
-   tags:
+  tags:
    - rabbitmq
+ become: yes
   roles:
    - rabbitmq
  
@@ -65,6 +74,7 @@
   hosts: PAYMENT
   tags:
    - payment
+  become: yes
   roles:
    - payment
   
