@@ -6,7 +6,7 @@
    state: present
  
 - name: Adding Roboshop as User
-  ansible.builtin.user:
+  user:
    name: 
    - roboshop
    
