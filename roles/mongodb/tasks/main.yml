@@ -1,0 +1,36 @@
+- name: Set Up Mongodb
+  copy:
+   src: mongodb.repo
+   dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install Mongo
+  yum:
+   name: mongodb-org
+   state: present
+   
+- name: Changing the Mongodb IP Address
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+    
+- name: Enabling Mongodb
+  systemd:
+   state: started
+   enabled: yes
+   
+- name: Download Mongodb Schema
+  ansible.builtin.unarchive:
+   src: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
+   dest: /tmp
+   remote_src: yes
+
+- name: Loading the catalogue JS file into mongo
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongod-main/catalogue.js"
+    idempotent: yes
+    
+- name: Loading the Users JS file into mongo
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongod-main/users.js"
+    idempotent: yes
