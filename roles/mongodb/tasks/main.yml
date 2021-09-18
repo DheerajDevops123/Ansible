@@ -5,7 +5,7 @@
 
 - name: Install MongoDB
   yum:
-   name: mongodb-org-4.2
+   name: mongodb-org
    state: present
    
 - name: Changing the Mongodb IP Address
