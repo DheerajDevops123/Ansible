@@ -1,9 +1,9 @@
 - name: Installing Node JS
   yum:
-  name:
-   - nodejs
-   - gcc-c++
-  state: present
+   name:
+    - nodejs
+    - gcc-c++
+   state: present
  
 - name: Adding Roboshop as User
   ansible.builtin.user:
