@@ -10,8 +10,8 @@
   
 - name: Installing My SQL
   yum:
-  name: mysql-community-server
-  state: present
+   name: mysql-community-server
+   state: present
   
 - name: Start My SQL Service
   systemd:
