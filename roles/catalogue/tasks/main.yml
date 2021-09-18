@@ -3,7 +3,7 @@
    name:
    - nodejs
    - gcc-c++
- state: present
+  state: present
  
 - name: Adding Roboshop as User
   ansible.builtin.user:
