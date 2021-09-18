@@ -26,7 +26,7 @@
    dest: /tmp
    remote_src: yes
 
-- name: Loading the catalogue JS file into mongo
+- name: Loading the Catalogue JS file into mongo
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/catalogue.js"
     idempotent: yes
