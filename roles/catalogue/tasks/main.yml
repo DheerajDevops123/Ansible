@@ -8,7 +8,7 @@
 - name: Adding Roboshop as User
   user:
    name: 
-   - roboshop
+    - roboshop
    
 - name: Download Catalogue archive
   ansible.builtin.unarchive:
