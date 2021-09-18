@@ -29,3 +29,14 @@
     owner: roboshop
     group: roboshop
     
+- name: Install npm based on package.json.
+  community.general.npm:
+    path: /home/roboshop/catalogue
+  become_user: roboshop
+  
+- name: Restarting Catalogue
+  systemd:
+   name: catalogue
+   state: restarted
+   enabled: yes
+   daemon_reload: yes
