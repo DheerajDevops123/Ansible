@@ -19,35 +19,34 @@
    state: started
    enabled: yes
    
+- name: To check the password reset status
+  shell: 'show databases' | mysql -uroot -pRoboShop@1
+  register: out
+   
 - name: Getting Default Password
   shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: default_password
+  when:
+   out.rc != 0
   
 - name: Reset SQL File
   copy:
    src: reset.sql
    dest: /tmp/reset.sql
-  
+   when:
+   out.rc != 0
+   
 - name: Reset MYSQL, Password
   shell: mysql --connect-expired-password -u root -p"{{default_password.stdout}}" </tmp/reset.sql
+  when:
+   out.rc != 0
+   
+   
     
   
 
 
-# Next, We need to change the default root password in order to start using the database service.
-# # mysql_secure_installation
 
-# You can check the new password working or not using the following command.
-
-# # mysql -u root -p
-
-# Run the following SQL commands to remove the password policy.
-# > uninstall plugin validate_password;
-# Setup Needed for Application.
-# As per the architecture diagram, MySQL is needed by
-
-# Shipping Service
-# So we need to load that schema into the database, So those applications will detect them and run accordingly.
 
 # To download schema, Use the following command
 
