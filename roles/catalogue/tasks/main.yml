@@ -18,6 +18,7 @@
 - name: Remove the catalogue old content
   ansible.builtin.file:
    path: /home/roboshop/catalogue
+   state: absent
    
 - name: Copying the catalogue module
   ansible.builtin.copy:
