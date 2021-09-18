@@ -3,12 +3,12 @@
   src: mysql.repo
   dest: /etc/yum.repos.d/mysql
   
-- name: Remove the packages  
+# - name: Remove the packages  
   
-- name: Installing My SQL
-  yum:
-  name: mysql-community-server
-  state: present
+# - name: Installing My SQL
+#   yum:
+#   name: mysql-community-server
+#   state: present
   
  
 
