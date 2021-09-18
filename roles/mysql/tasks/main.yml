@@ -1,7 +1,7 @@
 - name: Copying the Repos file
   ansible.builtin.copy:
    src: mysql.repo
-   dest: /etc/yum.repos.d/mysql
+   dest: /etc/yum.repos.d/mysql.repo
   
 - name: Remove the package
   yum:
