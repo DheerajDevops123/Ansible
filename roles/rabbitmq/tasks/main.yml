@@ -19,6 +19,7 @@
    enabled: yes
    
 - name: Creating user & setting Up permission
+  community.rabbitmq.rabbitmq_user:
    user: roboshop
    password: roboshop123
    vhost: /
