@@ -54,13 +54,13 @@
    dest: /tmp
    remote_src: yes
    
-# - name: Load the Schema
-#   mysql_db:
-#     state: import
-#     name: all
-#     target: /tmp/mysql-main/shipping.sql
-#     login_password: RoboShop@1
-#     login_user: root
+- name: Load the Schema
+  mysql_db:
+    state: import
+    name: all
+    target: /tmp/mysql-main/shipping.sql
+    login_password: RoboShop@1
+    login_user: root
 
   
  
