@@ -38,6 +38,7 @@
 - name: Reset MYSQL Password
   shell: mysql --connect-expired-password -u root -p"{{default_password.stdout}}" </tmp/reset.sql
   when: out.rc != 0
+  ignore_errors: yes
    
    
     
