@@ -18,13 +18,13 @@
    state: started
    enabled: yes
    
-- name: Creating user & setting Up permession
-    user: roboshop
-    password: roboshop123
-    vhost: /
-    configure_priv: .*
-    read_priv: .*
-    write_priv: .*
-    state: present
-    tags: administrator
+- name: Creating user & setting Up permission
+   user: roboshop
+   password: roboshop123
+   vhost: /
+   configure_priv: .*
+   read_priv: .*
+   write_priv: .*
+   state: present
+   tags: administrator
   
