@@ -28,7 +28,6 @@
   shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: default_password
   
-  
 - name: Reset SQL File
   copy:
    src: reset.sql
@@ -36,6 +35,16 @@
   
 - name: Reset MYSQL Password
   shell: mysql --connect-expired-password -u root -p"{{default_password.stdout}}" </tmp/reset.sql
+  
+- name: Remove Valiate Plugin
+  shell: echo 'show plugins;' | mysql -u root -p"RoboShop@1" | grep -i validate_password
+  register: value
+  ignore_errors: yes
+  
+- name: Uninstall Password Plugin
+  shell: echo "uninstall plugin validate_password;" >/tmp/pass.sql ; mysql -u root -p"RoboShop@1" </tmp/pass.sql
+  when: value == 0
+  
  
    
    
