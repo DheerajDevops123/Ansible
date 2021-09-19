@@ -1,0 +1,4 @@
+- name: Run Java from common File
+  include_role:
+    name: common
+    tasks_from: java
