@@ -10,7 +10,9 @@
   
 - name: Installing My SQL
   yum:
-   name: mysql-community-server
+   name: 
+    - mysql-community-server
+    -  MySQL-python
    state: present
   
 - name: Start My SQL Service
