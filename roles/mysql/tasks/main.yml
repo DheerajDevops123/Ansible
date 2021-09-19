@@ -48,6 +48,21 @@
   shell: echo "uninstall plugin validate_password;" >/tmp/pass.sql ; mysql -u root -p"RoboShop@1" </tmp/pass.sql
   when: value == 0
   
+- name: Download the Schema
+ ansible.builtin.unarchive:
+   src: https://github.com/roboshop-devops-project/mysql/archive/main.zip
+   dest: /tmp
+   remote_src: yes
+   
+# - name: Load the Schema
+#   mysql_db:
+#     state: import
+#     name: all
+#     target: /tmp/mysql-main/shipping.sql
+#     login_password: RoboShop@1
+#     login_user: root
+
+  
  
    
    
@@ -57,10 +72,6 @@
 
 
 
-# To download schema, Use the following command
-
-# # curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
-# Load the schema for Services.
 
 # # cd /tmp
 # # unzip mysql.zip
