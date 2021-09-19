@@ -63,20 +63,3 @@
     target: /tmp/mysql-main/shipping.sql
     login_password: RoboShop@1
     login_user: root
-
-  
- 
-   
-   
-    
-  
-
-
-
-
-
-# # cd /tmp
-# # unzip mysql.zip
-# # cd mysql-main
-# # mysql -u root -pRoboShop@1 <shipping.sql
-
