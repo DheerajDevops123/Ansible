@@ -17,16 +17,20 @@
   debug:
    msg: "{{USERDETAILS}}"
     
-# - name: Changing uid in the Payment.ini file
-#   ansible.builtin.lineinfile:
-#     path: /home/roboshop/{{COMPONENT}}/payment.ini
-#     regexp: 'uid'
-#     line: uid=1001
+- name: Changing uid in the Payment.ini file
+  ansible.builtin.lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/payment.ini
+    regexp: '^uid'
+    line: uid = {{USERDETAILS.uid}}
     
-# - name: Changing gid in the Payment.ini file
-#   ansible.builtin.lineinfile:
-#     path: /home/roboshop/{{COMPONENT}}/payment.ini
-#     regexp: 'gid'
-#     line: gid=1001
+- name: Changing gid in the Payment.ini file
+  ansible.builtin.lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/payment.ini
+    regexp: '^group'
+    line: gid = {{USERDETAILS.gid}}
+    
+- name: Making system restart from common tasks
+  include_tasks:
+   - systemd.yml
 
   
