@@ -15,7 +15,7 @@
     
 - name: msg
   debug:
-   msg: {{ROBOSHOP_USER}}
+   msg: {{USERDETAILS}}
     
 # - name: Changing uid in the Payment.ini file
 #   ansible.builtin.lineinfile:
