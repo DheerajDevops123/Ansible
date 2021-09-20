@@ -1,6 +1,7 @@
 - name: Adding Roboshop as User
   user:
    name: roboshop
+   register: ROBOSHOP_USER
    
 - name: Download {{COMPONENT}} archive
   ansible.builtin.unarchive:

@@ -13,7 +13,20 @@
     requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
     executable: pip3
     
-# - name: 
+- name: msg
+  debug:
+   msg: ROBOSHOP_USER
     
+# - name: Changing uid in the Payment.ini file
+#   ansible.builtin.lineinfile:
+#     path: /home/roboshop/{{COMPONENT}}/payment.ini
+#     regexp: 'uid'
+#     line: uid=1001
+    
+# - name: Changing gid in the Payment.ini file
+#   ansible.builtin.lineinfile:
+#     path: /home/roboshop/{{COMPONENT}}/payment.ini
+#     regexp: 'gid'
+#     line: gid=1001
 
   
