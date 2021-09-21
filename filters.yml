@@ -5,5 +5,5 @@
   tasks:
    - name: print site name
      debug:
-      msg: {{ url | split(".") }}
+      msg: "{{ url | split(".") }}""
   
