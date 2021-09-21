@@ -25,3 +25,9 @@
     src: roboshop.conf
     dest:  /etc/nginx/default.d/roboshop.conf
   notify: Restart NGINX
+   
+- name: Restart NGINX
+  systemd:
+   name: nginx
+   state: started
+   enabled: yes
