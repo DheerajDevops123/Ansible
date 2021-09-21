@@ -1,6 +1,6 @@
 - name: templates
   hosts: localhost
   roles:
-   sample
+   - sample
   
   
