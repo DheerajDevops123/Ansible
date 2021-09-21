@@ -8,6 +8,6 @@
    
 - name: creating templtae
   template:
-  src: hosts.txt
-  dest: /tmp/hosts.txt
+   src: hosts.txt
+   dest: /tmp/hosts.txt
     
