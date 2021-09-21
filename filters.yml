@@ -1,0 +1,9 @@
+- name: filters
+  hosts: localhost
+  vars: 
+   url: www.macys.com
+  tasks:
+   - name: print site name
+     debug:
+      msg: {{url | split(".")}}
+  
