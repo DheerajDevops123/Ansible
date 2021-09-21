@@ -11,5 +11,5 @@
      debug:
       msg: Heloo {{item.name}}, welocm {{item.course}}
      loop: 
-      - { name: john, cousre: swa }
+      - { name: john, course: swa }
       - { name: king, course: dfjhs}
