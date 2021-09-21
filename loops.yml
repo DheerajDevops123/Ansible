@@ -3,7 +3,7 @@
   tasks:
    - name: Print User detils
      debug:
-      - msg: Heloo {{item}}
+      msg: Heloo {{item}}
      loop:
       - dheeraj
       - sai
