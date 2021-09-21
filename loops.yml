@@ -10,7 +10,7 @@
    - name: printuser deatils from map
      debug:
       msg: Heloo {{item.name}}, welocm {{item.course}}
-     when: name == "john"
+     when: item.name == "john"
      loop: 
       - { name: john, course: swa }
       - { name: king, course: dfjhs}
