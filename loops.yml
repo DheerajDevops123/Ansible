@@ -7,3 +7,9 @@
      loop:
       - dheeraj
       - sai
+   - name: printuser deatils from map
+     debug:
+      msg: Heloo {{item.name}}, welocm {{item.course}}
+     loop: 
+      - { name: john cousre: swa}
+      - { name: king course: dfjhs}
