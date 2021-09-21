@@ -5,5 +5,5 @@
   tasks:
    - name: print site name
      debug:
-      msg: site = {{ url | split(".")}}
+      msg: site = {{ url | split(".") | last}}
   
