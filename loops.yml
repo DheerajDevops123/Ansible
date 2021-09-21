@@ -1,0 +1,9 @@
+- name: loops
+  hosts: local host
+  tasks:
+   - name: Print User detils
+     debug:
+      - msg: Heloo {{item}}
+     loop:
+      - dheeraj
+      - sai
