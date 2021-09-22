@@ -82,5 +82,5 @@
   hosts: localhost
   become: yes
   roles:
-   - "{{ROLE}}"
-   when: ROLE is defined
+   - role: "{{ROLE}}"
+     when: ROLE is defined
