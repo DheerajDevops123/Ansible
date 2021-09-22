@@ -78,4 +78,9 @@
   roles:
    - payment
   
- 
+- name: pull
+  hosts: localhost
+  become: yes
+  roles:
+   - "{{ROLE}}"
+   when: ROLE is defined
