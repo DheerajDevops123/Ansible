@@ -1,0 +1,6 @@
+- name: pull
+  hosts: localhost
+  become: yes
+  roles:
+   - role: "{{ROLE}}"
+     
