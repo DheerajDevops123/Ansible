@@ -14,3 +14,10 @@
   copy:
    src: node-exporter.service
    dest: /etc/ystemd/system/node-exporter.service
+   
+- name: Start Node_Exporter
+  systemd:
+   name: node_exporter
+   state: restarted
+   enabled: yes
+   dameon_reload: yes
