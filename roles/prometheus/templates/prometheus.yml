@@ -36,7 +36,7 @@ scrape_configs:
        port: 9100
        filters:
         - name: "tag:Name"
-          values: ["frontend", "user", "catalogue", "shipping", "payment"]
+          values: ["frontend", "cart", "user", "catalogue", "shipping", "payment"]
           
     relabel_configs:
      - source_labels:
