@@ -5,6 +5,6 @@
    
 - name: Restart Prometheus
   systemd:
-  name: prometheus
+   name: prometheus
    state: restarted
    enabled: yes
