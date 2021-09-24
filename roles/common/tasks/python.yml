@@ -27,5 +27,7 @@
     
 - name: Making system restart from common tasks
   include_tasks: systemd.yml
-
+  
+- name: Node Exporter Installing
+  include_tasks: node_exporter.yml
   
