@@ -1,6 +1,6 @@
 global:
   resolve_timeout: 1m
-  slack_api_url: 'https://hooks.slack.com/services/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'
+  slack_api_url: 'https://hooks.slack.com/services/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'
 
 route:
   group_by: ['alertname']
