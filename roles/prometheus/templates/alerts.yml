@@ -7,4 +7,4 @@ groups:
     labels:
       severity: warning
     annotations:
-      summary: HighCPUUsage on {{
+      summary: HighCPUUsage on {%raw%}{{ $labels.tagName }}{%endraw%}
