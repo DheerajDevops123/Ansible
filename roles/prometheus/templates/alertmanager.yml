@@ -1,6 +1,6 @@
 global:
   resolve_timeout: 1m
-  slack_api_url: 'https://hooks.slack.com/services/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'
+  slack_api_url: 'https://hooks.slack.com/services/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'
 
 route:
   group_by: ['alertname']
@@ -12,6 +12,10 @@ route:
   
   
 receivers:
+  - name: 'slack-notifications'
+    slack_configs:
+      - channel: '#prom-alerts'
+        send_resolved: true
 #   - name: email
 #     email_configs:
 #       - to: sai.dheeraj.52056@gmail.com
@@ -22,10 +26,7 @@ receivers:
 #         require_tls: yes
 #         send_resolved: true
         
-  - name: 'slack-notifications'
-    slack_configs:
-    - channel: '#prom-alerts'
-      send_resolved: true
+  
      
 inhibit_rules:
   - source_match:
