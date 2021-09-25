@@ -14,7 +14,7 @@ route:
 receivers:
   - name: 'slack-notifications'
     slack_configs:
-      - channel: '#prom-alerts'
+      - channel: '#myalerts'
         send_resolved: true
 #   - name: email
 #     email_configs:
