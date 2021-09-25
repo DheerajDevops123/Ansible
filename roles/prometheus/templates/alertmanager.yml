@@ -24,7 +24,7 @@ receivers:
         
   - name: 'slack-notifications'
     slack_configs:
-    - channel: '@Sai Dheeraj'
+    - channel: '#prom-alerts'
       send_resolved: true
      
 inhibit_rules:
