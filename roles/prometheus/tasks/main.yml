@@ -13,7 +13,7 @@
    state: restarted
    enabled: yes
    
- - name: Update Alertmanager Config
+- name: Update Alertmanager Config
   template:
    src: "{{item}}.yml"
    dest: /opt/prometheus/{{item}}.yml
