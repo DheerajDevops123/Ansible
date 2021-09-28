@@ -1,6 +1,6 @@
 global:
   resolve_timeout: 1m
-  slack_api_url: "https://hooks.slack.com/services/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"
+  slack_api_url: "https://hooks.slack.com/services/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"
 
 route:
   group_by: ['alertname']
@@ -13,7 +13,7 @@ route:
 receivers:
   - name: 'slack-notifications'
     slack_configs:
-      - channel: '#prom-alerts'
+      - channel: '#random'
         send_resolved: true
         
   # - name: email
