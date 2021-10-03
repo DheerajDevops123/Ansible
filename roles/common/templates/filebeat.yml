@@ -9,10 +9,10 @@ setup.template.name: "{{COMPONENT}}"
 setup.template.pattern: "{{COMPONENT}}"
     
 #multiline.match: after
- - type: filestream
-   enabled: false
-   paths:
-    - /var/log/*.log
+ # - type: filestream
+ #   enabled: false
+ #   paths:
+ #    - /var/log/*.log
     
 output.elasticsearch:
  hosts: ["elasticsearch.roboshop.internal:9200"]
