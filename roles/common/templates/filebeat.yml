@@ -21,7 +21,7 @@ output.elasticsearch:
     
 {% if OUTPUT_TO == "logstash" %}
 output.logstash:
- hosts: ["localhost:5044"]
+ hosts: ["elasticsearch.roboshop.internal:5044"]
  {% endif %}
  
 #multiline.match: after
