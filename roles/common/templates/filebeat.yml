@@ -5,23 +5,27 @@ filebeat.inputs:
    paths:
     - /var/log/{{COMPONENT}}.log
     
+{% if OUTPUT_TO == "elasticsearch" %}
 setup.template.name: "{{COMPONENT}}"
 setup.template.pattern: "{{COMPONENT}}"
 setup.ilm.enabled: false
+
+output.elasticsearch:
+ hosts: ["elasticsearch.roboshop.internal:9200"]
+ index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
+ {% endif %}
     
+{% if OUTPUT_TO == "logstash" %}
+output.logstash:
+ hosts: ["localhost:5044"]
+ {% endif %}
+ 
 #multiline.match: after
  # - type: filestream
  #   enabled: false
  #   paths:
  #    - /var/log/*.log
     
-output.elasticsearch:
- hosts: ["elasticsearch.roboshop.internal:9200"]
- index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
-
-#output.logstash:
- #hosts: ["localhost:5044"]
-
  ## Default Configuration   
 filebeat.config.modules:
  path: ${path.config}/modules.d/*.yml

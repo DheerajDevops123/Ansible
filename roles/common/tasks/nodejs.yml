@@ -32,3 +32,5 @@
   
 - name: Filebeat Installing
   include_tasks: filebeat.yml
+  vars:
+   OUTPUT_TO: elasticsearch
