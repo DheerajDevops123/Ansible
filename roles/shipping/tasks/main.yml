@@ -2,3 +2,11 @@
   include_role:
     name: common
     tasks_from: java
+    
+- name: Include Filebeat
+  include_role:
+   name: common
+   tasks_from: filebeat
+  vars:
+   OUTPUT_TO: logstash
+   SHIPPING: true
