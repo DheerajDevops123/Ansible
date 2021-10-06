@@ -25,7 +25,7 @@ setup.ilm.enabled: false
 output.elasticsearch:
  hosts: ["elasticsearch.roboshop.internal:9200"]
  index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
- {% endif %}
+{% endif %}
     
 {% if OUTPUT_TO == "logstash" %}
 output.logstash:
