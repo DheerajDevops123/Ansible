@@ -30,7 +30,7 @@ output.elasticsearch:
 {% if OUTPUT_TO == "logstash" %}
 output.logstash:
  hosts: ["elasticsearch.roboshop.internal:5044"]
- {% endif %}
+{% endif %}
  
  ## Default Configuration   
 filebeat.config.modules:
