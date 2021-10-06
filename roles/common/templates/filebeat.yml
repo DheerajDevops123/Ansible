@@ -1,9 +1,9 @@
 filebeat.inputs:
- - type: log
-   enabled: true
-   fields:
-    appname: {{COMPONENT}}
-   paths:
+  - type: log
+    enabled: true
+    fields:
+      appName: {{COMPONENT}}
+    paths:
 {% if NGINX is defined %}
       - /var/log/nginx/access.log
 {% else %}
@@ -11,35 +11,35 @@ filebeat.inputs:
 {% endif %}
 
 {% if JAVA is defined %}
-     multiline.pattern: "^[0-9][0-9][0-9][0-9]-"
-     multiline.negate: true
-     multiline.match: after
+    multiline.pattern: "^[0-9][0-9][0-9][0-9]-"
+    multiline.negate: true
+    multiline.match: after
 {% endif %}
-    
+
 {% if OUTPUT_TO == "elasticsearch" %}
-json.keys_under_root: true
+    json.keys_under_root: true
 setup.template.name: "{{COMPONENT}}"
-setup.template.pattern: "{{COMPONENT}}"
+setup.template.pattern: "{{COMPONENT}}-*"
 setup.ilm.enabled: false
 
 output.elasticsearch:
- hosts: ["elasticsearch.roboshop.internal:9200"]
- index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
+  hosts: ["elasticsearch.roboshop.internal:9200"]
+  index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
 {% endif %}
-    
+
 {% if OUTPUT_TO == "logstash" %}
 output.logstash:
- hosts: ["elasticsearch.roboshop.internal:5044"]
+  hosts: ["elasticsearch.roboshop.internal:5044"]
 {% endif %}
  
- ## Default Configuration   
+ ### Default Configuration
 filebeat.config.modules:
- path: ${path.config}/modules.d/*.yml
- reload.enabled: false
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
 
 setup.template.settings:
- index.number_of_shards: 1
-  
+  index.number_of_shards: 1
+
 setup.kibana:
 
 processors:
@@ -48,4 +48,5 @@ processors:
   - add_cloud_metadata: ~
   - add_docker_metadata: ~
   - add_kubernetes_metadata: ~
+
 
