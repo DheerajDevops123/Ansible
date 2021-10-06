@@ -1,3 +1,13 @@
+- name: Set up Rsyslog
+  template:
+   src: rsyslog.conf
+   dest: /etc/rsyslog.d/roboshop.conf
+   
+- name: Restart Rsyslog
+  systemd:
+   name: rsyslog
+   state: restarted
+   
 - name: Install Python
   yum:
    name:
@@ -31,3 +41,8 @@
 - name: Node Exporter Installing
   include_tasks: node_exporter.yml
   
+- name: Filebeat Installing
+  include_tasks: filebeat.yml
+  vars:
+   OUTPUT_TO: logstash
+   PYTHON: true
