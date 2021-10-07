@@ -25,6 +25,12 @@
     src: roboshop.conf
     dest:  /etc/nginx/default.d/roboshop.conf
   notify: Restart NGINX
+  
+- name: Copying NGINX Conf file
+  ansible.builtin.copy:
+    src: nginx.conf
+    dest:  /etc/nginx/nginx.conf
+  notify: Restart NGINX
    
 - name: Restart NGINX
   systemd:
