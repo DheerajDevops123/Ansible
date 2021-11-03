@@ -1,5 +1,5 @@
 groups:
-- name: Roboshop
+- name: Roboshop High CPU Usage
   rules:
   - alert: HighCPUUsage
     expr: cpu_usage_in_percentage > 50
