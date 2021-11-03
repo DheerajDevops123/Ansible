@@ -1,6 +1,6 @@
 #global:
 #  resolve_timeout: 1m
-#  slack_api_url: "{{slack}}"
+#  slack_api_url:
 
 route:
   group_by: ['alertname']
@@ -11,7 +11,7 @@ route:
 #   'slack-notifications'
 
 receivers:
-  - name: 'email'
+#  - name: 'email'
 #  'slack-notifications'
 #    slack_configs:
 #      - channel: '#random'
