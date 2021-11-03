@@ -13,15 +13,15 @@
    state: restarted
    enabled: yes
    
-- name: Update Alertmanager Config
-  template:
-   src: "{{item}}.yml"
-   dest: /opt/alertmanager/{{item}}.yml
-  loop:
-    - alertmanager
- 
-- name: Restart Alertmanager
-  systemd:
-   name: alertmanager
-   state: restarted
-   enabled: yes
+#- name: Update Alertmanager Config
+#  template:
+#   src: "{{item}}.yml"
+#   dest: /opt/alertmanager/{{item}}.yml
+#  loop:
+#    - alertmanager
+#
+#- name: Restart Alertmanager
+#  systemd:
+#   name: alertmanager
+#   state: restarted
+#   enabled: yes
