@@ -1,7 +1,7 @@
 - name: Include GitHub Download
-  include_tasks: download-github
+  include_tasks: download-github.yml
   when: APP_VERSION is not defined
 
 - name: Include Nexus Download
-  include_tasks: download-nexus
+  include_tasks: download-nexus.yml
   when: APP_VERSION is defined
