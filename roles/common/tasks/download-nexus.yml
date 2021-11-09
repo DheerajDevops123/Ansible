@@ -16,6 +16,19 @@
     path: "{{APP_PATH}}"
     state: absent
 
+- name: Creating APP Directory for backend
+  file:
+    path: "{{APP_PATH}}"
+    state: directory
+  when: APP_TYPE == "backend"
+  become_user: roboshop
+
+- name: Creating APP Directory for frontend
+  file:
+    path: "{{APP_PATH}}"
+    state: directory
+  when: APP_TYPE == "frontend"
+
 - name: Extract {{COMPONENT}} archive
   ansible.builtin.unarchive:
     src: /tmp/{{COMPONENT}}-{{APP_VERSION}}.zip
