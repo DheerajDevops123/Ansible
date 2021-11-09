@@ -29,11 +29,20 @@
     state: directory
   when: APP_TYPE == "frontend"
 
-- name: Extract {{COMPONENT}} archive
+- name: Extract {{COMPONENT}} archive for backend
   ansible.builtin.unarchive:
     src: /tmp/{{COMPONENT}}-{{APP_VERSION}}.zip
     dest: "{{APP_PATH}}"
     remote_src: yes
+  when: APP_TYPE == "backend"
+  become_user: roboshop
+
+- name: Extract {{COMPONENT}} archive for frontend
+  ansible.builtin.unarchive:
+    src: /tmp/{{COMPONENT}}-{{APP_VERSION}}.zip
+    dest: "{{APP_PATH}}"
+    remote_src: yes
+  when: APP_TYPE == "frontend"
 
 
 #- name: Copying the {{COMPONENT}} module
