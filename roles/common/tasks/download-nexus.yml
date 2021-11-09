@@ -5,15 +5,23 @@
   when: APP_TYPE == "backend"
 
 - name: Download {{COMPONENT}} archive
-  ansible.builtin.unarchive:
-    src: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
-    dest: /tmp
-    remote_src: yes
+  get_url:
+    url: http://172.31.13.236:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+    dest: /tmp/{{COMPONENT}}-{{APP_VERSION}}.zip
+    username: admin
+    password: '{{ mysecret }}'
 
 - name: Remove the {{COMPONENT}} old content
   ansible.builtin.file:
     path: "{{APP_PATH}}"
     state: absent
+
+- name: Extract {{COMPONENT}} archive
+  ansible.builtin.unarchive:
+    src: /tmp/{{COMPONENT}}-{{APP_VERSION}}.zip
+    dest: "{{APP_PATH}}"
+    remote_src: yes
+
 
 #- name: Copying the {{COMPONENT}} module
 #  ansible.builtin.copy:
