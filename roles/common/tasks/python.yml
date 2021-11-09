@@ -15,8 +15,10 @@
     - gcc
     - python3-devel
     
-- name: Doing User adding taska
+- name: Doing User adding tasks
   include_tasks: download.yml
+  vars:
+    APP_PATH: /home/roboshop/{{COMPONENT}}
   
 - name: Install Python Dependencies
   pip:
