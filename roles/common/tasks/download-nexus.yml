@@ -15,18 +15,18 @@
     path: "{{APP_PATH}}"
     state: absent
 
-- name: Copying the {{COMPONENT}} module
-  ansible.builtin.copy:
-    src: /tmp/{{COMPONENT}}-main/
-    dest: "{{APP_PATH}}/"
-    remote_src: yes
-    owner: roboshop
-    group: roboshop
-  when: APP_TYPE == "backend"
-
-- name: Copying the {{COMPONENT}} module
-  ansible.builtin.copy:
-    src: /tmp/frontend-main/static/
-    dest: "{{APP_PATH}}/"
-    remote_src: yes
-  when: APP_TYPE == "frontend"
+#- name: Copying the {{COMPONENT}} module
+#  ansible.builtin.copy:
+#    src: /tmp/{{COMPONENT}}-main/
+#    dest: "{{APP_PATH}}/"
+#    remote_src: yes
+#    owner: roboshop
+#    group: roboshop
+#  when: APP_TYPE == "backend"
+#
+#- name: Copying the {{COMPONENT}} module
+#  ansible.builtin.copy:
+#    src: /tmp/frontend-main/static/
+#    dest: "{{APP_PATH}}/"
+#    remote_src: yes
+#  when: APP_TYPE == "frontend"
