@@ -9,7 +9,7 @@
     url: http://172.31.13.236:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
     dest: /tmp/{{COMPONENT}}-{{APP_VERSION}}.zip
     username: admin
-    password: '{{ mysecret }}'
+    password: "{{mysecret}}"
 
 - name: Remove the {{COMPONENT}} old content
   ansible.builtin.file:
