@@ -4,4 +4,4 @@
 
 - name: Include Nexus Download
   include_tasks: download-nexus.yml
-  when: APP_VERSION is defined
+  when: APP_VERSION != "null"
