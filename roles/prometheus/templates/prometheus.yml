@@ -35,8 +35,8 @@ scrape_configs:
        secret_key: {{SECERT_KEY}}
        port: 9100
        filters:
-        - name: "tag:Name"
-          values: ["frontend", "cart", "user", "catalogue", "shipping", "payment"]
+        - name: "tag:Prometheus"
+          values: ["yes"]
           
     relabel_configs:
      - source_labels:
