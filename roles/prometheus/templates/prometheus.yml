@@ -35,7 +35,7 @@ scrape_configs:
        secret_key: {{SECERT_KEY}}
        port: 9100
        filters:
-        - name: "tag:Prometheus"
+        - name: "tag:Monitor"
           values: ["yes"]
           
     relabel_configs:
