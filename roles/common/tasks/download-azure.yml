@@ -52,7 +52,7 @@
     owner: roboshop
     group: roboshop
     recurse: yes
-    when: APP_TYPE == "backend"
+  when: APP_TYPE == "backend"
 
 
 - name: stop
