@@ -21,7 +21,7 @@
   vars:
     APP_PATH: /home/roboshop/{{COMPONENT}}
 
-- name: Install npm based on package.json.
+- name: Install npm based on package json
   community.general.npm:
     path: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
