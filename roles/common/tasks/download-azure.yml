@@ -41,7 +41,7 @@
 - name: Download Artifacts
   shell: az artifacts universal download --organization https://dev.azure.com/saidheeraj52056/ --project="RoboShop" --scope project --feed DevOps --name {{COMPONENT}} --version {{APP_VERSION}} -path .
   args:
-    - chdir: "{{APP_PATH}}"
+    chdir: "{{APP_PATH}}"
 
 - name: stop
   shell: exit 1
