@@ -34,9 +34,14 @@
 
 - name: Install AZ DevOps Extension
   shell: az extension add --name azure-devops
-  
+
 - name: Auth to AZ DevOps
   shell: echo {{PAT}} | az DevOps login
+
+- name: Download Artifacts
+  shell: az artifacts universal download --organization https://dev.azure.com/saidheeraj52056/ --project="RoboShop" --scope project --feed DevOps --name {{COMPONENT}} --version {{APP_VERSION}} -path .
+  args:
+    - chdir: "{{APP_PATH}}"
 
 - name: stop
   shell: exit 1
