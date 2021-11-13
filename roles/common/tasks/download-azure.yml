@@ -34,8 +34,7 @@
 
 - name: Install AZ DevOps Extension
   shell: az extension add --name azure-devops
-  become_user: roboshop
-
+  
 - name: Auth to AZ DevOps
   shell: echo {{PAT}} | az DevOps login
 
