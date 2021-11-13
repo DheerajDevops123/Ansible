@@ -37,7 +37,7 @@
   become_user: roboshop
 
 - name: Auth to AZ DevOps
-  shell: echo {{PAT}} | az login
+  shell: echo {{PAT}} | az DevOps login
 
 - name: stop
   shell: exit 1
