@@ -22,8 +22,8 @@
     state: directory
   when: APP_TYPE == "frontend"
 
--name: copy AZ Module
- copy:
+- name: copy AZ Module
+  copy:
    src: az.repo
    dest: /etc/yum.repos.d/az.repo
 
