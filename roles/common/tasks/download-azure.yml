@@ -22,6 +22,9 @@
     state: directory
   when: APP_TYPE == "frontend"
 
+-name: copy AZ Module
+ copy:
+   src:
 - name: stop
   shell: exit 1
 
