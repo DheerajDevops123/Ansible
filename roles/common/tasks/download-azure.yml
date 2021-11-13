@@ -27,6 +27,11 @@
    src: az.repo
    dest: /etc/yum.repos.d/az.repo
 
+- name: Install AZ CLI
+  yum:
+    name: azure-cli
+    state: present
+
 - name: stop
   shell: exit 1
 
