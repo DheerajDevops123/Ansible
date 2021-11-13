@@ -24,7 +24,9 @@
 
 -name: copy AZ Module
  copy:
-   src:
+   src: az.repo
+   dest: /etc/yum.repos.d/az.repo
+
 - name: stop
   shell: exit 1
 
