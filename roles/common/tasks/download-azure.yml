@@ -45,6 +45,16 @@
   args:
     chdir: "{{APP_PATH}}"
 
+- name: Fixing Permissions to Directory
+  ansible.builtin.file:
+    path: "{{APP_PATH}}"
+    state: directory
+    owner: roboshop
+    group: roboshop
+    recurse: yes
+    when: APP_TYPE == "backend"
+
+
 - name: stop
   shell: exit 1
 
