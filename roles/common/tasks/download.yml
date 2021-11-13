@@ -2,6 +2,10 @@
   include_tasks: download-github.yml
   when: APP_VERSION == "null"
 
-- name: Include Nexus Download
-  include_tasks: download-nexus.yml
+#- name: Include Nexus Download
+#  include_tasks: download-nexus.yml
+#  when: APP_VERSION != "null"
+
+- name: Include Azure Download
+  include_tasks: download-azure.yml
   when: APP_VERSION != "null"

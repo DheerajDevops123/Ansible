@@ -1,0 +1,27 @@
+- name: Adding Roboshop as User
+  user:
+    name: roboshop
+  register: USERDETAILS
+  when: APP_TYPE == "backend"
+
+- name: Remove the {{COMPONENT}} old content
+  ansible.builtin.file:
+    path: "{{APP_PATH}}"
+    state: absent
+
+- name: Creating APP Directory for backend
+  file:
+    path: "{{APP_PATH}}"
+    state: directory
+  when: APP_TYPE == "backend"
+  become_user: roboshop
+
+- name: Creating APP Directory for frontend
+  file:
+    path: "{{APP_PATH}}"
+    state: directory
+  when: APP_TYPE == "frontend"
+
+-name: stop
+ shell: exit1
+
