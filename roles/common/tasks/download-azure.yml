@@ -22,6 +22,6 @@
     state: directory
   when: APP_TYPE == "frontend"
 
--name: stop
+- name: stop
  shell: exit1
 
