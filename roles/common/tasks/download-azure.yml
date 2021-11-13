@@ -23,5 +23,5 @@
   when: APP_TYPE == "frontend"
 
 - name: stop
- shell: exit1
+  shell: exit1
 
