@@ -24,9 +24,9 @@
    
 - name: Restart NGINX
   systemd:
-   name: nginx
-   state: started
-   enabled: yes
+    name: nginx
+    state: started
+    enabled: yes
   ignore_errors: yes
    
 - name: Include Node_Exporter
