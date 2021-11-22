@@ -27,6 +27,7 @@
    name: nginx
    state: started
    enabled: yes
+  ignore_errors: yes
    
 - name: Include Node_Exporter
   include_role:
