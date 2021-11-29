@@ -22,7 +22,7 @@
     APP_PATH: /home/roboshop/{{COMPONENT}}
 
 - name: Install NodeJS Dependencies
-  community.general.npm:
+  npm:
     path: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
   
